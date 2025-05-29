@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contagem Regressiva GTA 6</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('https://tm.ibxk.com.br/2025/05/06/06133849705125.jpg?ims=1280x605');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: white;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+    h2 {
+      font-size: 1.5em;
+      margin: 10px 0;
+    }
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      font-size: 2em;
+      font-weight: bold;
+      flex-wrap: wrap;
+    }
+    .time-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .label {
+      font-size: 0.6em;
+      margin-top: 5px;
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 1.8em; }
+      h2 { font-size: 1.2em; }
+      .countdown { gap: 15px; font-size: 1.5em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>GRAND THEFT<br>AUTO VI (GTA 6)</h1>
+    <h2>DATA DE LANÇAMENTO</h2>
+    <p>CONTAGEM REGRESSIVA PARA 26 DE MAIO DE 2026 ÀS 00:00 (HORÁRIO DE SÃO PAULO)</p>
+    <div class="countdown" id="countdown">
+      <div class="time-box">
+        <div id="days">0</div>
+        <div class="label">DIAS</div>
+      </div>
+      <div class="time-box">
+        <div id="hours">0</div>
+        <div class="label">HORAS</div>
+      </div>
+      <div class="time-box">
+        <div id="minutes">0</div>
+        <div class="label">MINUTOS</div>
+      </div>
+      <div class="time-box">
+        <div id="seconds">0</div>
+        <div class="label">SEGUNDOS</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const countdown = () => {
+      const endDate = new Date('2026-05-26T00:00:00-03:00'); // Horário de São Paulo (UTC-3)
+      const now = new Date();
+      const diff = endDate - now;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById('days').textContent = days;
+      document.getElementById('hours').textContent = hours;
+      document.getElementById('minutes').textContent = minutes;
+      document.getElementById('seconds').textContent = seconds;
+    };
+
+    setInterval(countdown, 1000);
+    countdown();
+  </script>
+</body>
+</html>
